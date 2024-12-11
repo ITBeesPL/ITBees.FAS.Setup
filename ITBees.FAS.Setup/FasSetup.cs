@@ -11,7 +11,7 @@ public class FasSetup
     /// <summary>
     /// That will scan all assemblyies in project and search for classes that implements IFasDependencyRegistration, and execute all dependencies
     /// </summary>
-    public static void RegisterAllFasDependencies<YourDbContext, YourIdentityUser>(IServiceCollection services, IConfigurationRoot configurationRoot) where YourDbContext : DbContext where YourIdentityUser : IdentityUser, new()
+    public static void RegisterAllFasDependencies<YourDbContext, YourIdentityUser>(IServiceCollection services, IConfigurationRoot configurationRoot) where YourDbContext : DbContext where YourIdentityUser : IdentityUser<Guid>, new()
     {
         var assemblies = AppDomain.CurrentDomain.GetAssemblies();
 
