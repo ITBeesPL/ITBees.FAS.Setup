@@ -8,5 +8,5 @@ namespace ITBees.FAS.Setup;
 public interface IFasDependencyRegistrationWithGenerics
 {
     void Register<TContext, TIdentityUser>(IServiceCollection services, IConfigurationRoot configurationRoot)
-        where TContext : DbContext where TIdentityUser : IdentityUser, new();
+        where TContext : DbContext where TIdentityUser : IdentityUser<Guid>, new();
 }
