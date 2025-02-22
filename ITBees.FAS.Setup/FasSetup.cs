@@ -17,6 +17,9 @@ public class FasSetup
 
         foreach (var assembly in assemblies)
         {
+            if(assembly.FullName.StartsWith("Microsoft.AspNetCore.Server.IIS"))
+                continue;
+            
             var types = assembly.GetTypes();
 
             var registrationTypes = types.Where(t => typeof(IFasDependencyRegistration).IsAssignableFrom(t) && !t.IsInterface);
